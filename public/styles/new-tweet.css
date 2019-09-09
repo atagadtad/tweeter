@@ -1,0 +1,32 @@
+.counter {
+  position: relative;
+  float: right;
+}
+
+textarea {
+  position: relative;
+  justify-content: space-around;
+  text-align: left;
+  display: flex;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: solid;
+  width: 100%;
+  font-family: 'Bungee', cursive
+}
+
+.new-tweet {
+  color: #545149;
+}
+
+input {
+  font-family: 'Bungee', cursive;
+  position: relative;
+  float: left;
+  background-color: #4056A1
+}
+[value|='Tweet'] { color: #FFFFFF; }
+[placeholder|='What are you humming about?'] {font-size: 18px;}
+
+
