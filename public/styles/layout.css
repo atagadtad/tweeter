@@ -14,10 +14,20 @@ html {
  * Global layout stuff
  */
 
+main {
+  width: 90%;
+  text-align: center;
+  position: relative;
+  margin: auto;
+  top: 10px;
+  
+}
+
 body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 /*

@@ -1,0 +1,27 @@
+header {
+  margin: auto;
+  text-align: center;
+  height: 400px;
+  width: 100%;
+  position: relative;
+  top: 36px;
+  background-color: #a87472;
+  background-image: url("https://www.transparenttextures.com/patterns/diagmonds-light.png");
+}
+
+.bg-light {
+  background-color: rgb(218, 178, 119);
+}
+
+h2 {
+  position: relative;
+  top: 0px;
+  text-align: center;
+  font-family: 'Source Sans Pro', cursive;
+  color: #FFFFFF;
+}
+
+img {
+  position: relative;
+  top: 65px;
+}
