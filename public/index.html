@@ -9,12 +9,14 @@
   <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
   <link href="https://fonts.googleapis.com/css?family=Bungee|Source+Sans+Pro:300,300i,700,700i&display=swap"
     rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <!-- App CSS -->
   <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
   <link rel="stylesheet" href="/styles/nav.css" type="text/css">
   <link rel="stylesheet" href="/styles/header.css" type="text/css">
   <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css">
+  <link rel="stylesheet" href="/styles/container.css" type="text/css">
 
   <!-- External JS -->
   <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
@@ -32,19 +34,19 @@
     <a href="#"><strong>Write</strong> a new tweet</a>
   </nav>
 
-  <header class="bg-light">
-    <div>
+  <header id="first-header">
+    <div id="user-pic">
       <img src="/images/profile-hex.png">
     </div>
     <br>
     <div>
-      <h2><strong>Your</strong> Name</h2>
+      <h2><strong>Aaron</strong> Tagadtad</h2>
     </div>
   </header>
 
 
   <!-- Page-specific (main) content here -->
-  <main class="container">
+  <div class="container">
     <section class="new-tweet">
       <h2 class="new-tweet">Compose Tweet</h2>
       <form method="POST" action="/tweets/">
@@ -53,30 +55,34 @@
         <span id='counter' class="counter">140</span>
       </form>
     </section>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-      magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-      Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    <p>he best taco bowls are made in Trump Tower Grill. I love Hispanics!
 
-      My placeholder text, I think, is going to end up being very good with women. An ‘extremely credible source’ has
-      called my office and told me that Barack Obama’s placeholder text is a fraud.
+    <section id="stored-tweets">
+      <article class="articled-tweets">
+        <header class="tweet-header">
+          <div class="handler">
+            <label class="name">Name</label>
+            <img class="articled-user" src="/images/profile-hex.png">
+            <label class="tweet-handle">@user</label>
+          </div>
+        </header>
+        <div class="underline-tweet">
+          Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata corpora
+          quaeritis. Summus brains sit​​, morbo vel maleficia?
+        </div>
+        <footer class="footer-tweet">
+          <div>
+            10 days ago
+          </div>
+          <div>
+            <i class="fa fa-heart"></i>
+            <i class="fa fa-retweet"></i>
+          </div>
+        </footer>
+      </article>
+    </section>
 
-      I think the only difference between me and the other placeholder text is that I’m more honest and my words are
-      more beautiful. You’re disgusting. You’re disgusting.
 
-      We have so many things that we have to do better... and certainly ipsum is one of them. We are going to make
-      placeholder text great again. Greater than ever before. I don't think anybody knows it was Russia that wrote Lorem
-      Ipsum, but I don't know, maybe it was. It could be Russia, but it could also be China. It could also be lots of
-      other people. It also could be some wordsmith sitting on their bed that weights 400 pounds. Ok?
-
-      I think the only card she has is the Lorem card.</p>
-    <p>Shaman mumblecore wayfarers mixtape. Etsy mixtape YOLO biodiesel. Farm-to-table taxidermy tbh fanny pack
-      flexitarian plaid kitsch. Craft beer unicorn viral yr venmo stumptown deep v skateboard mlkshk freegan. Bushwick
-      lomo viral, deep v ethical cred gochujang schlitz cliche man bun narwhal kombucha plaid adaptogen skateboard.
-      Hashtag disrupt kombucha, poke freegan beard twee typewriter tote bag.</p>
-
-  </main>
+  </div>
 
 </body>
 

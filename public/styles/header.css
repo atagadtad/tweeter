@@ -1,17 +1,18 @@
-header {
+#first-header {
   margin: auto;
   text-align: center;
   height: 400px;
   width: 100%;
   position: relative;
   top: 36px;
-  background-color: #a87472;
   background-image: url("https://www.transparenttextures.com/patterns/diagmonds-light.png");
 }
 
-.bg-light {
-  background-color: rgb(218, 178, 119);
+#user-pic{
+  position: relative;
+  top: 68px;
 }
+
 
 h2 {
   position: relative;
@@ -21,7 +22,6 @@ h2 {
   color: #FFFFFF;
 }
 
-img {
+header.first-header img {
   position: relative;
-  top: 65px;
 }

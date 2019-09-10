@@ -3,6 +3,7 @@
   float: right;
 }
 
+
 textarea {
   position: relative;
   justify-content: space-around;
@@ -13,6 +14,7 @@ textarea {
   border-right: 0;
   border-bottom: solid;
   width: 100%;
+  background-color: #f4f1ec;
   font-family: 'Bungee', cursive
 }
 

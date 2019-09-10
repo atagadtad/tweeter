@@ -1,0 +1,59 @@
+
+.articled-tweets:hover {
+  box-shadow: 5px 10px #888888;
+}
+
+.articled-tweets {
+  padding: 15px;
+  justify-content: space-around;
+  position: relative;
+  top: 50px;
+  width: 100%;
+  box-sizing: border-box;
+  border-bottom: solid;
+  border-top: solid;
+  border-left: solid;
+  border-right: solid;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+#stored-tweets {
+  padding: 15px;
+}
+
+.name {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 16px;
+}
+
+.handler {
+  display: flex;
+  justify-content: space-between;
+}
+
+.underline-tweet {
+  border-bottom: solid;
+  padding: 10px;
+
+}
+
+.articled-tweets img {
+  width: 50px;
+}
+
+.articled-user {
+
+}
+
+.tweet-handle {
+  font-size: 16px;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  font-size: 12px;
+  text-align: left;
+}
+
