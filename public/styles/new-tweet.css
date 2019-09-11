@@ -3,11 +3,17 @@
   float: right;
 }
 
+.container {
+  position: relative;
+  top: 100px;
+  width: 86%;
+  margin: 0 auto;
+}
 
 textarea {
   position: relative;
   justify-content: space-around;
-  text-align: left;
+  outline: none;
   display: flex;
   border-top: 0;
   border-left: 0;
@@ -18,8 +24,14 @@ textarea {
   font-family: 'Bungee', cursive
 }
 
+#textbox {
+
+}
+
 .new-tweet {
+  /* padding: 0 */
   color: #545149;
+  z-index: -1;
 }
 
 input {

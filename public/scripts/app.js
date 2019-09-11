@@ -4,9 +4,14 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-
+const escape = function (str) {
+  let div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+}
 
 function createTweetElement(tweetObj) {
+  const userText = tweetObj.content.text;
   return `
 <article class="articled-tweets">
 <header class="tweet-header">
@@ -17,7 +22,7 @@ function createTweetElement(tweetObj) {
   </div>
 </header>
 <div class="underline-tweet">
-  ${tweetObj.content.text}
+  ${escape(userText)}
 </div>
 <footer class="footer-tweet">
   <div>
@@ -41,19 +46,42 @@ const renderTweets = function (tweets) {
 
 $(function () {
   const $form = $('form');
+
+  $('#text-box').keydown(function () {
+    let textLength = $('#text-box').val().length;
+    if (textLength > 0 && textLength < 140) {
+      $('#errorMsg').slideUp(300);
+    } else if (textLength > 140) {
+      $('#errorMsg').html(`You dun goofed. You filled in too much. Remedy that.`)
+      $('#errorMsg').css("color", "red")
+      $('#errorMsg').slideDown(300)
+    }
+  })
+
   $form.submit(function (event) {
     event.preventDefault();
     const stringifiedTweet = $(this).serialize()
-    console.log('Button clicked, performing ajax call...');
-    console.log(stringifiedTweet);
-    $.post('/tweets', stringifiedTweet).then(() => {
-      loadtweets();
-    })
+    let textLength = $('#text-box').val().length;
+    if (textLength === 0) {
+      $('#errorMsg').html(`You dun goofed. You didn't fill anything in. Remedy that.`)
+      $('#errorMsg').css("color", "red")
+      $('#errorMsg').slideDown(300)
+    } else if (textLength > 140) {
+      $('#errorMsg').html(`You dun goofed. You filled in too much. Remedy that.`)
+      $('#errorMsg').css("color", "red")
+      $('#errorMsg').slideDown(300)
+    } else {
+      $.post('/tweets', stringifiedTweet).then(() => {
+        $('#stored-tweets').empty()
+        loadtweets();
+        this.reset();
+      })
+    }
   })
 });
 
 function loadtweets() {
-  $('#stored-tweets').empty()
+
   $.ajax({
     url: '/tweets',
     success: function (data) {
@@ -61,3 +89,12 @@ function loadtweets() {
     }
   })
 };
+
+
+$(document).ready(function () {
+  $('#slide').click(function () {
+    $(".new-tweet").slideToggle(300);
+    $('#text-box').focus();
+  })
+})
+

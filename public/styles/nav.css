@@ -31,3 +31,7 @@ a {
 .bg-dark {
   background-color: #4056A1
 }
+
+#slide:hover {
+  color: #545149;
+}
