@@ -4,7 +4,7 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-// Test / driver code (temporary). Eventually will get this from the server.
+
 
 function createTweetElement(tweetObj) {
   return `
@@ -32,32 +32,6 @@ function createTweetElement(tweetObj) {
 `
 };
 
-const data = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png"
-      ,
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd"
-    },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1461113959088
-  }
-]
-
 const renderTweets = function (tweets) {
   for (tweet of tweets) {
     $('#stored-tweets').append(createTweetElement(tweet));
@@ -65,8 +39,25 @@ const renderTweets = function (tweets) {
   return;
 }
 
-$(document).ready(function () {
-  renderTweets(data);
-})
+$(function () {
+  const $form = $('form');
+  $form.submit(function (event) {
+    event.preventDefault();
+    const stringifiedTweet = $(this).serialize()
+    console.log('Button clicked, performing ajax call...');
+    console.log(stringifiedTweet);
+    $.post('/tweets', stringifiedTweet).then(() => {
+      loadtweets();
+    })
+  })
+});
 
-
+function loadtweets() {
+  $('#stored-tweets').empty()
+  $.ajax({
+    url: '/tweets',
+    success: function (data) {
+      renderTweets(data);
+    }
+  })
+};
