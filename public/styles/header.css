@@ -21,6 +21,9 @@
     margin: 0;
     width: 80%;
   }
+  #user-pic {
+    padding: 15px;
+  }
   #compose-tweet {
     visibility: hidden;
   }

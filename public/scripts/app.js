@@ -26,7 +26,7 @@ function createTweetElement(tweetObj) {
 </div>
 <footer class="footer-tweet">
   <div>
-    ${tweetObj.created_at}
+    ${Math.round((Date.now() - tweetObj.created_at) / 1000 / 60 / 60 / 24)} days
   </div>
   <div>
     <i class="fa fa-heart"></i>
