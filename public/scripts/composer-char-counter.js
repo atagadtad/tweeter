@@ -1,7 +1,7 @@
 // basic character counter
-$(document).ready(function () {
-  const maxLength = 140
-  $("#text-box").on('input', function () {
+$(document).ready(function() {
+  const maxLength = 140;
+  $("#text-box").on('input', function() {
     let initialLength = $(this).val().length;
     let length = maxLength - initialLength;
     let count = $("form").find("#counter");
@@ -11,7 +11,7 @@ $(document).ready(function () {
       $(count).css("color", "#545149");
     }
     $(count).text(length);
-  })
+  });
 });
 
 

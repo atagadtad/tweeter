@@ -1,5 +1,5 @@
 // function to escape if user inputs html into textbox
-const escape = function (str) {
+const escape = function(str) {
   let div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
@@ -29,53 +29,53 @@ function createTweetElement(tweetObj) {
   </div>
 </footer>
 </article>
-`
-};
+`;
+}
 
 // iterates over array of object(the tweets) and appends
-const renderTweets = function (tweets) {
+const renderTweets = function(tweets) {
   for (tweet of tweets.reverse()) {
     $('#stored-tweets').append(createTweetElement(tweet));
   }
   return;
 };
 
-$(function () {
+$(function() {
   // these 2 code block are listening for input in the textbox to initiate or hide
   // error messages
   const $form = $('form');
-  $('#text-box').on('input', function () {
+  $('#text-box').on('input', function() {
     let textLength = $('#text-box').val().length;
     if (textLength > 0 && textLength < 140) {
       $('#errorMsg').slideUp(300);
     } else if (textLength > 140) {
-      $('#errorMsg').html(`You dun goofed. You filled in too much. Remedy that.`)
-      $('#errorMsg').css("color", "red")
-      $('#errorMsg').slideDown(300)
+      $('#errorMsg').html(`You dun goofed. You filled in too much. Remedy that.`);
+      $('#errorMsg').css("color", "red");
+      $('#errorMsg').slideDown(300);
     }
-  })
+  });
 
-  $form.submit(function (event) {
+  $form.submit(function(event) {
     event.preventDefault();
-    const stringifiedTweet = $(this).serialize()
+    const stringifiedTweet = $(this).serialize();
     let textLength = $('#text-box').val().length;
     if (textLength === 0) {
-      $('#errorMsg').html(`You dun goofed. You didn't fill anything in. Remedy that.`)
-      $('#errorMsg').css("color", "red")
-      $('#errorMsg').slideDown(300)
+      $('#errorMsg').html(`You dun goofed. You didn't fill anything in. Remedy that.`);
+      $('#errorMsg').css("color", "red");
+      $('#errorMsg').slideDown(300);
     } else if (textLength > 140) {
-      $('#errorMsg').html(`You dun goofed. You filled in too much. Remedy that.`)
-      $('#errorMsg').css("color", "red")
-      $('#errorMsg').slideDown(300)
+      $('#errorMsg').html(`You dun goofed. You filled in too much. Remedy that.`);
+      $('#errorMsg').css("color", "red");
+      $('#errorMsg').slideDown(300);
     } else {
       $.post('/tweets', stringifiedTweet).then(() => {
-        $('#stored-tweets').empty()
+        $('#stored-tweets').empty();
         loadtweets();
         this.reset();
         $('#counter').text(140);
-      })
+      });
     }
-  })
+  });
 
 });
 
@@ -83,19 +83,19 @@ $(function () {
 function loadtweets() {
   $.ajax({
     url: '/tweets',
-    success: function (data) {
+    success: function(data) {
       renderTweets(data);
     }
-  })
-};
+  });
+}
 
 // allowing user to click on ('Write a new tweet) to toggle textbox for user to input
 // new tweets
-$(document).ready(function () {
-  $('#slide').click(function () {
+$(document).ready(function() {
+  $('#slide').click(function() {
     $(".new-tweet").slideToggle(300);
     $('#text-box').focus();
-  })
+  });
   $(".new-tweet").slideUp(0);
-})
+});
 
