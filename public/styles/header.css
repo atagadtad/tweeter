@@ -8,18 +8,24 @@
   background-image: url("https://www.transparenttextures.com/patterns/diagmonds-light.png");
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 1024px) {
   body {
     display: flex; 
 
   }
   .fixed-top{
     visibility: visible;
+    position:fixed;
+    top: 0;
+    right:0;
+    left: 0;
+    z-index: 1030;
   }
+  
   #first-header {
     float: top;
     margin: 0;
-    width: 80%;
+    width: 30%;
   }
   #user-pic {
     padding: 15px;
@@ -50,6 +56,6 @@ h2 {
   color: #FFFFFF;
 }
 
-header.first-header img {
+/* header.first-header img {
   position: relative;
-}
+} */

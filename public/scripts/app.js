@@ -38,7 +38,7 @@ function createTweetElement(tweetObj) {
 };
 
 const renderTweets = function (tweets) {
-  for (tweet of tweets) {
+  for (tweet of tweets.reverse()) {
     $('#stored-tweets').append(createTweetElement(tweet));
   }
   return;
@@ -46,7 +46,8 @@ const renderTweets = function (tweets) {
 
 $(function () {
   const $form = $('form');
-
+  // have an event listener on the input to have the error slide up or down
+  // depending if user passes the checks
   $('#text-box').on('input', function () {
     let textLength = $('#text-box').val().length;
     if (textLength > 0 && textLength < 140) {
@@ -75,6 +76,7 @@ $(function () {
         $('#stored-tweets').empty()
         loadtweets();
         this.reset();
+        $('#counter').text(140);
       })
     }
   })
@@ -96,5 +98,6 @@ $(document).ready(function () {
     $(".new-tweet").slideToggle(300);
     $('#text-box').focus();
   })
+  $(".new-tweet").slideUp(0);
 })
 

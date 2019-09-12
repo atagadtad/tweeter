@@ -4,14 +4,6 @@ nav {
   visibility: hidden;
 }
 
-@media only screen and (min-width: 768px) {
-  .fixed-top{
-    z-index: -1;
-    visibility: visible;
-
-  }
-}
-
 
 span {
   font-family: 'Bungee', cursive;
@@ -20,8 +12,8 @@ span {
 
 #slide {
   visibility: visible;
+  position: absolute;
 }
-
 
 
 a {
@@ -38,7 +30,7 @@ a {
 }
 
 .fixed-top {
-  position:fixed;
+  position: absolute;
   top: 0;
   right:0;
   left: 0;
