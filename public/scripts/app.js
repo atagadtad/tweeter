@@ -1,14 +1,9 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
-
+// function to escape if user inputs html into textbox
 const escape = function (str) {
   let div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
-}
+};
 
 function createTweetElement(tweetObj) {
   const userText = tweetObj.content.text;
@@ -37,17 +32,18 @@ function createTweetElement(tweetObj) {
 `
 };
 
+// iterates over array of object(the tweets) and appends
 const renderTweets = function (tweets) {
   for (tweet of tweets.reverse()) {
     $('#stored-tweets').append(createTweetElement(tweet));
   }
   return;
-}
+};
 
 $(function () {
+  // these 2 code block are listening for input in the textbox to initiate or hide
+  // error messages
   const $form = $('form');
-  // have an event listener on the input to have the error slide up or down
-  // depending if user passes the checks
   $('#text-box').on('input', function () {
     let textLength = $('#text-box').val().length;
     if (textLength > 0 && textLength < 140) {
@@ -80,10 +76,11 @@ $(function () {
       })
     }
   })
+
 });
 
-function loadtweets() {
 
+function loadtweets() {
   $.ajax({
     url: '/tweets',
     success: function (data) {
@@ -92,7 +89,8 @@ function loadtweets() {
   })
 };
 
-
+// allowing user to click on ('Write a new tweet) to toggle textbox for user to input
+// new tweets
 $(document).ready(function () {
   $('#slide').click(function () {
     $(".new-tweet").slideToggle(300);
