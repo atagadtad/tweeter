@@ -47,7 +47,7 @@ const renderTweets = function (tweets) {
 $(function () {
   const $form = $('form');
 
-  $('#text-box').keydown(function () {
+  $('#text-box').on('input', function () {
     let textLength = $('#text-box').val().length;
     if (textLength > 0 && textLength < 140) {
       $('#errorMsg').slideUp(300);

@@ -1,18 +1,43 @@
 #first-header {
   margin: auto;
   text-align: center;
-  height: 400px;
+  height: 500px;
   width: 100%;
   position: relative;
-  top: 36px;
+  top: 0px;
   background-image: url("https://www.transparenttextures.com/patterns/diagmonds-light.png");
+}
+
+@media only screen and (min-width: 768px) {
+  body {
+    display: flex; 
+
+  }
+  .fixed-top{
+    visibility: visible;
+  }
+  #first-header {
+    float: top;
+    margin: 0;
+    width: 80%;
+  }
+  #compose-tweet {
+    visibility: hidden;
+  }
 }
 
 #user-pic{
   position: relative;
-  top: 68px;
+  top: 112px;
 }
 
+#my-name {
+  top: 70px;
+}
+
+.new-tweet {
+  top: -60px;
+}
 
 h2 {
   position: relative;

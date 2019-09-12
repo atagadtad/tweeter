@@ -1,11 +1,28 @@
 nav {
   font-family: 'Bungee', cursive;
   color: #FFFFFF;
+  visibility: hidden;
 }
+
+@media only screen and (min-width: 768px) {
+  .fixed-top{
+    z-index: -1;
+    visibility: visible;
+
+  }
+}
+
 
 span {
   font-family: 'Bungee', cursive;
+  visibility: visible;
 }
+
+#slide {
+  visibility: visible;
+}
+
+
 
 a {
   font-family: 'Source Sans Pro', cursive;

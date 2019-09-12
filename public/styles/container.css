@@ -3,6 +3,10 @@
   box-shadow: 5px 10px #888888;
 }
 
+#submit:hover {
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
 .articled-tweets {
   padding: 15px;
   justify-content: space-around;
@@ -35,8 +39,8 @@
   display: none;
 }
 
-.hide {
-  border: solid, red;
+.new-tweet {
+  padding: 15px;
 }
 
 .underline-tweet {
