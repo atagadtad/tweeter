@@ -1,3 +1,4 @@
+// basic character counter
 $(document).ready(function () {
   const maxLength = 140
   $("#text-box").on('input', function () {

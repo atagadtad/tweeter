@@ -24,9 +24,7 @@ textarea {
   font-family: 'Source Sans Pro', sans-serif;
 }
 
-
 .new-tweet {
-  /* padding: 0 */
   color: #545149;
   z-index: -1;
 }
@@ -37,7 +35,9 @@ input {
   float: left;
   background-color: #4056A1
 }
+
 [value|='Tweet'] { color: #FFFFFF; }
+
 [placeholder|='What are you humming about?'] {font-size: 18px;}
 
 
